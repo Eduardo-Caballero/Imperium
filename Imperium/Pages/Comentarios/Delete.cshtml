@@ -1,0 +1,41 @@
+﻿@page
+@model Imperium.Pages.Comentarios.DeleteModel
+
+@{
+    ViewData["Title"] = "Viviendas | Comentarios";
+}
+
+<h1>Eliminar comentario</h1>
+
+<h3>¿Estas seguro de quere borrar este comentario?</h3>
+
+<div>
+    <div>
+        <div class="card mb-3">
+            <div class="card-body col-md-12">
+                <div class="row card-title">
+                    <div class="col-2">
+                        <b>@Html.DisplayFor(model => model.Comentario.Usuario.Nombre)</b>
+                    </div>
+                    <div class="col-8">
+                        @Html.DisplayFor(model => model.Comentario.Vivienda.Nombre)
+                    </div>
+                    <div class="col-2 text-center" style="color:red;">
+                        <b>@Html.DisplayFor(model => model.Comentario.Status)</b>
+                    </div>
+                </div>
+                <div class="row card-text">
+                    <div class="col-12">
+                        @Html.DisplayFor(model => model.Comentario.Descripcion)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form method="post" class="text-center">
+        <input type="hidden" asp-for="Comentario.ComentarioId" />
+        <input type="submit" value="Delete" class="btn btn-dark" /> |
+        <a class="btn btn-outline-dark" asp-page="./Index">Regresar</a>
+    </form>
+</div>

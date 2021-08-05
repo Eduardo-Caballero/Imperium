@@ -1,0 +1,59 @@
+﻿@page
+@model Imperium.Pages.Viviendas.DeleteModel
+
+@{
+    ViewData["Title"] = "Vivienda | Administrar";
+}
+
+<h1>Eliminar</h1>
+
+<h4>¿Estas seguro de querer eliminar permanentemente esta vivienda?</h4>
+<div>
+    <h4>Vivienda</h4>
+    <hr />
+    <div class=" row">
+        <div class="col-md-7">
+            <div class="row">
+                <label class="col-2 card-header"><b>Nombre:</b></label>
+                <label class="col-10 card-header">@Html.DisplayFor(model => model.Vivienda.Nombre)</label>
+            </div>
+            <div class="row">
+                <label class="col-2"><b>Transacción:</b></label>
+                <label class="col-10">@Html.DisplayFor(model => model.Vivienda.Transaccion)</label>
+            </div>
+            <div class="row">
+                <label class="col-2"><b>Precio:</b></label>
+                <label class="col-10">@Html.DisplayFor(model => model.Vivienda.Precio)</label>
+            </div>
+            <div class="row">
+                <label class="col-2"><b>Tipo de vivienda:</b></label>
+                <label class="col-10">@Html.DisplayFor(model => model.Vivienda.TipoVivienda.Nombre)</label>
+            </div>
+            <div class="row">
+                <label class="col-2"><b>Superficie:</b></label>
+                <label class="col-10">@Html.DisplayFor(model => model.Vivienda.Superficie)</label>
+            </div>
+            <div class="row">
+                <label class="col-2"><b>Descripción:</b></label>
+                <label class="col-10">@Html.DisplayFor(model => model.Vivienda.Descripcion)</label>
+            </div>
+            <div class="row">
+                <label class="col-2"><b>Características:</b></label>
+                <label class="col-10">@Html.DisplayFor(model => model.Vivienda.Caracteristicas)</label>
+            </div>
+            <div class="row">
+                <label class="col-2"><b>Ciudad:</b></label>
+                <label class="col-10">@Html.DisplayFor(model => model.Vivienda.Ciudad.Nombre)</label>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <iframe src="@Html.DisplayFor(model => model.Vivienda.Ubicacion)" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    <br />
+    <form method="post" class="text-center">
+        <input type="hidden" asp-for="Vivienda.ViviendaId" />
+        <input type="submit" value="Delete" class="btn btn-dark" /> |
+        <a asp-page="./Index" class="btn btn-outline-dark">Regresar</a>
+    </form>
+</div>

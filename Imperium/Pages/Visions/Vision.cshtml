@@ -1,0 +1,26 @@
+﻿@page
+@model Imperium.Pages.Visions.VisionModel
+@{
+    ViewData["Title"] = "Vision";
+}
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+    <div class="col-md-7">
+        @foreach (var item in Model.Vision)
+        {
+            <div>
+                <div class="h-100 p-5 border rounded-3">
+                    <h2 class="featurette-heading">Nuestra Visión</h2>
+                    <p class="lead ">@Html.DisplayFor(modelItem => item.Descripcion)</p>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-5 rounded-3 text-center">
+        <img class="cborder bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="~/img/vision.jpg">
+    </div>
+</div>
+
+<hr class="featurette-divider">

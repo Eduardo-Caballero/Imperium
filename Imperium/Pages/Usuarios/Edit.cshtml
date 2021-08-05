@@ -1,0 +1,81 @@
+﻿@page
+@model Imperium.Pages.Usuarios.EditModel
+
+@{
+    ViewData["Title"] = "Usuario | Administrar";
+}
+
+<h1>Editar</h1>
+
+<h4>Usuario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Usuario.Correo" />
+            <div class="form-group col">
+                <label asp-for="Usuario.Correo" class="control-label">Correo:</label>
+                <input asp-for="Usuario.Correo" class="form-control" />
+                <span asp-validation-for="Usuario.Correo" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label asp-for="Usuario.Nombre" class="control-label">Nombre(s):</label>
+                    <input asp-for="Usuario.Nombre" class="form-control" />
+                    <span asp-validation-for="Usuario.Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group col-3">
+                    <label asp-for="Usuario.APaterno" class="control-label">Primer Apellido:</label>
+                    <input asp-for="Usuario.APaterno" class="form-control" />
+                    <span asp-validation-for="Usuario.APaterno" class="text-danger"></span>
+                </div>
+                <div class="form-group col-3">
+                    <label asp-for="Usuario.AMaterno" class="control-label">Segundo Apellido</label>
+                    <input asp-for="Usuario.AMaterno" class="form-control" />
+                    <span asp-validation-for="Usuario.AMaterno" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label asp-for="Usuario.Telefono" class="control-label">Número:</label>
+                    <input asp-for="Usuario.Telefono" class="form-control" />
+                    <span asp-validation-for="Usuario.Telefono" class="text-danger"></span>
+                </div>
+                <div class="form-group col-6">
+                    <label asp-for="Usuario.CiudadId" class="control-label">Ciudad:</label>
+                    <select asp-for="Usuario.CiudadId" class="form-control" asp-items="ViewBag.CiudadId"></select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label asp-for="Usuario.Password" class="control-label">Contraseña:</label>
+                    <input asp-for="Usuario.Password" class="form-control" />
+                    <span asp-validation-for="Usuario.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group col-6">
+                    <label asp-for="Usuario.PerfilId" class="control-label">Perfil:</label>
+                    <select asp-for="Usuario.PerfilId" class="form-control" asp-items="ViewBag.PerfilId"></select>
+                </div>
+            </div>
+            <div class="form-group col">
+                <label asp-for="Usuario.Fotografia" class="control-label"></label>
+                <input asp-for="Usuario.Fotografia" class="form-control" />
+                <span asp-validation-for="Usuario.Fotografia" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group text-center">
+                <input type="submit" value="Guardar" class="btn btn-dark" /> |
+                <a class="btn btn-outline-dark" asp-page="./Index">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

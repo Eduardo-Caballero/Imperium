@@ -1,0 +1,104 @@
+﻿@page
+@model Imperium.Pages.Viviendas.CreateModel
+
+@{
+    ViewData["Title"] = "Vivienda | Administrar";
+}
+
+<h1>Añadir</h1>
+
+<h5>LLena los datos de la vivienda que quieres añadir.</h5>
+<hr />
+
+<div>
+    <form method="post" enctype="multipart/form-data" class="row">
+        <div class="col-md-7">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group col">
+                <label asp-for="Vivienda.Nombre" class="control-label">Titulo:</label>
+                <input asp-for="Vivienda.Nombre" class="form-control" placeholder="Nombre para la casa..." />
+                <span asp-validation-for="Vivienda.Nombre" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label asp-for="Vivienda.Transaccion" class="control-label">Transacción:</label>
+                    <select asp-for="Vivienda.Transaccion" class="form-control custom-select">
+                        <option value="Venta">Venta</option>
+                        <option value="Renta">Renta</option>
+                    </select>
+                </div>
+                <div class="form-group col-6">
+                    <label asp-for="Vivienda.Precio" class="control-label">Precio:</label>
+                    <input asp-for="Vivienda.Precio" class="form-control" placeholder="Cantidad" />
+                    <span asp-validation-for="Vivienda.Precio" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label asp-for="Vivienda.TipoViviendaId" class="control-label">Tipo de vivienda:</label>
+                    <select asp-for="Vivienda.TipoViviendaId" class="form-control" asp-items="ViewBag.TipoViviendaId"></select>
+                </div>
+                <div class="form-group col-6">
+                    <label asp-for="Vivienda.Superficie" class="control-label">Superficie:</label>
+                    <input asp-for="Vivienda.Superficie" class="form-control" placeholder="Medida en metros" />
+                    <span asp-validation-for="Vivienda.Superficie" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group col">
+                <label asp-for="Vivienda.Descripcion" class="control-label">Descripción:</label>
+                <textarea asp-for="Vivienda.Descripcion" class="form-control" placeholder="Elementos de la propiedad..." cols="40" rows="4"></textarea>
+                <span asp-validation-for="Vivienda.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="Vivienda.Caracteristicas" class="control-label">Características:</label>
+                <textarea asp-for="Vivienda.Caracteristicas" class="form-control" placeholder="Detalles de la propiedad..." cols="40" rows="4"></textarea>
+                <span asp-validation-for="Vivienda.Caracteristicas" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="form-group col-4">
+                    <label asp-for="Vivienda.CiudadId" class="control-label">Ciudad:</label>
+                    <select asp-for="Vivienda.CiudadId" class="form-control" asp-items="ViewBag.CiudadId"></select>
+                </div>
+                <div class="form-group col-8">
+                    <label asp-for="Vivienda.Ubicacion" class="control-label">Ubicación:</label>
+                    <input asp-for="Vivienda.Ubicacion" class="form-control" />
+                    <span asp-validation-for="Vivienda.Ubicacion" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 mb-3">
+            <div class="form-group">
+                <label asp-for="Vivienda.Imagen1" class="control-label">Imagen 1:</label>
+                <input type="file" name="archivo1" asp-for="Vivienda.Imagen1" class="form-control" />
+                <span asp-validation-for="Vivienda.Imagen1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vivienda.Imagen2" class="control-label">Imagen 2:</label>
+                <input type="file" name="archivo2" asp-for="Vivienda.Imagen2" class="form-control" />
+                <span asp-validation-for="Vivienda.Imagen2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vivienda.Imagen3" class="control-label">Imagen 3:</label>
+                <input type="file" name="archivo3" asp-for="Vivienda.Imagen3" class="form-control" />
+                <span asp-validation-for="Vivienda.Imagen3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vivienda.Imagen4" class="control-label">Imagen 4:</label>
+                <input type="file" name="archivo4" asp-for="Vivienda.Imagen4" class="form-control" />
+                <span asp-validation-for="Vivienda.Imagen4" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="form-group row">
+            <div class="text-center">
+                <input type="submit" value="Añadir" class="btn btn-dark" /> |
+                <a asp-page="Index" class="btn btn-outline-dark">Regresar</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

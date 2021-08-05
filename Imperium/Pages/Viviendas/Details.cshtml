@@ -1,0 +1,57 @@
+﻿@page
+@model Imperium.Pages.Viviendas.DetailsModel
+
+@{
+    ViewData["Title"] = "Vivienda | Administrar";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Vivienda</h4>
+    <hr />
+    <div class=" row">
+        <div class="col-md-7">
+            <div class="row">
+                <label class="col-2 card-header"><b>Nombre:</b></label>
+                <label class="col-10 card-header"><b>@Html.DisplayFor(model => model.Vivienda.Nombre)</b> </label>
+            </div>
+            <div class="row">
+                <label class="col-2"><b>Transacción:</b></label>
+                <label class="col-10">@Html.DisplayFor(model => model.Vivienda.Transaccion)</label>
+            </div>
+            <div class="row">
+                <label class="col-2"><b>Precio:</b></label>
+                <label class="col-10">@Html.DisplayFor(model => model.Vivienda.Precio)</label>
+            </div>
+            <div class="row">
+                <label class="col-2"><b>Tipo de vivienda:</b></label>
+                <label class="col-10">@Html.DisplayFor(model => model.Vivienda.TipoVivienda.Nombre)</label>
+            </div>
+            <div class="row">
+                <label class="col-2"><b>Superficie:</b></label>
+                <label class="col-10">@Html.DisplayFor(model => model.Vivienda.Superficie)</label>
+            </div>
+            <div class="row">
+                <label class="col-2"><b>Descripción</b>:</label>
+                <label class="col-10">@Html.DisplayFor(model => model.Vivienda.Descripcion)</label>
+            </div>
+            <div class="row">
+                <label class="col-2"><b>Características:</b></label>
+                <label class="col-10">@Html.DisplayFor(model => model.Vivienda.Caracteristicas)</label>
+            </div>
+            <div class="row">
+                <label class="col-2"><b>Ciudad:</b></label>
+                <label class="col-10">@Html.DisplayFor(model => model.Vivienda.Ciudad.Nombre)</label>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <iframe src="@Html.DisplayFor(model => model.Vivienda.Ubicacion)" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</div>
+<br />
+<div class="text-center">
+    <a class="btn btn-dark" asp-page="./Edit" asp-route-id="@Model.Vivienda.ViviendaId">Editar</a> |
+    <a class="btn btn-outline-dark" asp-page="./Index">Regresar</a>
+</div>

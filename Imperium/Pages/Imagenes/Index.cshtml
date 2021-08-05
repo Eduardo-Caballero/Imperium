@@ -1,0 +1,61 @@
+﻿@page
+@model Imperium.Pages.Imagenes.IndexModel
+
+@{
+    ViewData["Title"] = "Vivienda | Imagen";
+}
+
+<h1>Aministrar las imágenes de las propiedades</h1>
+<div class="row">
+    <h6 class="col-10">
+        Aquí podrás administrar todas las imagenes de las propiedades con las que cuenta la empresa, podrás modificar, verifcar o  eliminar, dependiendo lo que necesites.
+        De igual forma podras agregar nuevas imagenes:
+    </h6>
+    <p class="col-2">
+        <a class="btn btn-dark btn-lg" asp-page="Create">Añadir</a>
+    </p>
+</div>
+<br />
+<table class="table table-hover table-striped">
+    <thead style="background-color: #38383F; color:white;">
+        <tr>
+            <th>
+                Nombre:
+            </th>
+            <th>
+                Imagen:
+            </th>
+            <th>
+                Vivienda:
+            </th>
+            <th>
+                Contenido:
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Imagen)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                <img src="~/img/@Html.DisplayFor(modelItem => item.Archivo)" width="250" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vivienda.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contenido)
+            </td>
+            <td>
+                <a class="btn btn-outline-dark btn-sm" asp-page="./Edit" asp-route-id="@item.ImagenId">Editar</a> |
+                <a class="btn btn-outline-dark btn-sm" asp-page="./Details" asp-route-id="@item.ImagenId">Detalles</a> |
+                <a class="btn btn-outline-dark btn-sm" asp-page="./Delete" asp-route-id="@item.ImagenId">Eliminar</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,36 @@
+﻿@page
+@model Imperium.Pages.Ciudades.DeleteModel
+
+@{
+    ViewData["Title"] = "Vivienda | Ciudad";
+}
+
+<div class="row">
+    <div class="bg-dark text-center col-6">
+        <div class="row"><img style="height:300px" src="~/img/ciu1.jpg" /></div>
+        <div class="row"><img style="height:300px" src="~/img/ciu2.jpg" /></div>
+    </div>
+    <br />
+    <div class="col-6 text-center">
+        <h1>Eliminar</h1>
+        <h5>¿Estas seguro de querer borrar este elemento?</h5>
+        <br />
+        <h4>TipoVivienda</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Nombre:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ciudad.Nombre)
+            </dd>
+        </dl>
+        <hr />
+        <br />
+        <form method="post">
+            <input type="hidden" asp-for="Ciudad.CiudadId"/>
+            <input type="submit" value="Delete" class="btn btn-dark" /> |
+            <a class="btn btn-outline-dark" asp-page="./Index">Regresar</a>
+        </form>
+    </div>
+</div>

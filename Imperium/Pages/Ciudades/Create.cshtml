@@ -1,0 +1,36 @@
+﻿@page
+@model Imperium.Pages.Ciudades.CreateModel
+
+@{
+    ViewData["Title"] = "Vivienda | Ciudad";
+}
+
+<div class="row">
+    <div class="bg-dark text-center col-6">
+        <div class="row"><img style="height:300px" src="~/img/ciu1.jpg" /></div>
+        <div class="row"><img style="height:300px" src="~/img/ciu2.jpg" /></div>
+    </div>
+    <br />
+    <div class="col-6 text-center">
+        <h1>Añadir</h1>
+
+        <h4>Ciudad</h4>
+        <hr />
+        <form class="text-center" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                Nombre:<input asp-for="Ciudad.Nombre" class="form-control" />
+                <span asp-validation-for="Ciudad.Nombre" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-dark" />
+                <a class="btn btn-outline-dark" asp-page="Index">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

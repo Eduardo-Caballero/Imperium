@@ -1,0 +1,102 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "XTREME | Inmobiliaria";
+    Layout = "_MENU";
+}
+
+<main class="bg-dark">
+    <div id="Inicio" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/img/img1.jpg" width="550" height="450" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/img/img2.jpg" width="550" height="450" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/img/img3.jpg" width="550" height="450" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/img/img4.jpg" width="550" height="450" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/img/img5.jpg" width="550" height="450" class="d-block w-100" alt="...">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#Inicio" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#Inicio" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</main>
+
+<main>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-6">
+            <div class="h-100 p-5 ">
+                <h2 class="featurette-heading">Lo que somos</h2>
+                <p class="lead">
+                    Nosotros la inmobiliaria XTREME somos una empresa que se compromete a brindarte la mejor variedad de viviendas, con la libertad de elegir
+                    considerando las descripciones detalladas...
+                </p>
+                <p class="text-center">
+                    <a class="btn btn-dark" asp-area="" asp-page="/Misions/Mision">VER MÁS</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" src="~/img/vision.jpg">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-6 order-md-2">
+            <div class="h-100 p-5 ">
+                <h2 class="featurette-heading">Catálogo de propiedades</h2>
+                <p class="lead">
+                    Contamos con propiedades actualizadas, con galería de interiores y exteriores, información detallada, ubicación exacta con vista de google maps
+                    y con la posibilidad de comunicarse con nosotros en caso de estar interesado en la vivienda.
+                </p>
+                <p class="text-center">
+                    <a class="btn btn-dark" asp-area="" asp-page="/Viviendas/Catalogo">VER MÁS</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6 order-md-1">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" src="~/img/google-maps-3-marker.jpg">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-6">
+            <div class="h-100 p-5 ">
+                <h2 class="featurette-heading">Contácto directo</h2>
+                <p class="lead">
+                    En caso de querer comunicarse con nosotros, por algún detalle que necesite o duda que le genera la información u otro asunto que tenga,
+                    tiene la posibilidad de comunicarse con nosotros desde la misma página o con la información de contacto.
+                </p>
+                <p class="text-center">
+                    <a class="btn btn-dark" asp-area="" asp-page="/Contactos/Create">VER MÁS</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" src="~/img/vision.jpg">
+        </div>
+    </div>
+    <hr class="featurette-divider">
+</main>
+
+

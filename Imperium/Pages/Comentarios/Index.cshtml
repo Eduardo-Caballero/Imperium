@@ -1,0 +1,42 @@
+﻿@page
+@model Imperium.Pages.Comentarios.IndexModel
+
+@{
+    ViewData["Title"] = "Viviendas | Comentarios";
+}
+
+<h1>Comentarios</h1>
+<hr />
+<br />
+<div>
+    <div>
+        @foreach (var item in Model.Comentario)
+        {
+            <div class="card mb-3">
+                <div class="card-body col-md-12">
+                    <div class="row card-title">
+                        <div class="col-2">
+                            <b>@Html.DisplayFor(modelItem => item.Usuario.Nombre)</b>
+                        </div>
+                        <div class="col-8">
+                            @Html.DisplayFor(modelItem => item.Vivienda.Nombre)
+                        </div>
+                        <div class="col-2 text-center" style="color:red;">
+                            <b>@Html.DisplayFor(modelItem => item.Status)</b>
+                        </div>
+                    </div>
+                    <div class="row card-text">
+                        <div class="col-10">
+                            @Html.DisplayFor(modelItem => item.Descripcion)
+                        </div>
+                        <div class="col-2 text-center">
+                            <hr />
+                            <a class="btn btn-outline-dark" asp-page="./Edit" asp-route-id="@item.ComentarioId">Verificar</a><br />
+                            <a class="btn btn-outline-dark" asp-page="./Delete" asp-route-id="@item.ComentarioId">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,71 @@
+﻿@page
+@model Imperium.Pages.LoginModel
+@{
+}
+
+<body style="background: #38383F;">
+</body>
+<section>
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+                <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                        <div class="col-md-6 col-lg-5 d-none d-md-block">
+                            <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/img1.jpg"
+                                 alt="login form"
+                                 class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                        </div>
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5 text-black">
+
+
+
+                                <form method="post">
+
+
+
+                                    <div class="d-flex align-items-center mb-3 pb-1 ">
+                                        <img width="40" height="40" src="~/img/logo.png" />
+                                        <span class="h1 fw-bold mb-0">XTREME</span>
+                                    </div>
+
+
+
+                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Inicia sesión en tu cuenta</h5>
+
+
+
+                                    <div class="form-floating mb-4">
+                                        <input type="email" asp-for="correo" class="form-control form-control-lg" placeholder="Correo" />
+                                        <label for="floatingInput">Correo</label>
+                                    </div>
+
+
+
+                                    <div class="form-floating mb-4">
+                                        <input type="password" asp-for="contrasenia" class="form-control form-control-lg" placeholder="Contraseña" />
+                                        <label for="floatingPassword">Contraseña</label>
+                                    </div>
+
+
+
+                                    <div class="pt-1 mb-4">
+                                        <button class="w-100 btn btn-dark btn-lg btn-block" type="submit" asp-page-handler="Login">INICIAR SESIÓN</button>
+                                    </div>
+
+
+
+                                    <p class="mb-5 pb-lg-2" style="color: #393f81;">
+                                        ¿No tienes una cuenta?
+                                        <a style="color: #393f81;" asp-page="/Usuarios/CrearLogin">Regístrese aquí</a>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

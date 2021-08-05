@@ -1,0 +1,38 @@
+﻿@page
+@model Imperium.Pages.TipoViviendas.CreateModel
+
+@{
+    ViewData["Title"] = "Vivienda | Tipo";
+}
+
+<div class="row">
+    <div class="bg-dark text-center col-6">
+        <div class="row"><img style="height:300px" src="~/img/tipo1.jpg" /></div>
+        <div class="row"><img style="height:300px" src="~/img/tipo2.jpg" /></div>
+    </div>
+    <br />
+    <div class="col-6 text-center">
+        <h1>Añadir</h1>
+
+        <h4>Tipo de vivienda</h4>
+        <hr />
+        <form class="text-center" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TipoVivienda.Nombre" class="control-label">Nombre:</label>
+                <input asp-for="TipoVivienda.Nombre" class="form-control" />
+                <span asp-validation-for="TipoVivienda.Nombre" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Añadir" class="btn btn-dark" /> |  
+                <a class="btn btn-outline-dark" asp-page="Index">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

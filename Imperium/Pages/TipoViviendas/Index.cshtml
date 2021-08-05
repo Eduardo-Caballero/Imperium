@@ -1,0 +1,45 @@
+﻿@page
+@model Imperium.Pages.TipoViviendas.IndexModel
+
+@{
+    ViewData["Title"] = "Vivienda | Tipo";
+}
+
+<div class="row">
+    <div class="bg-dark text-center col-6">
+        <div class="row" ><img style="height:300px" src="~/img/tipo1.jpg" /></div>
+        <div class="row" ><img style="height:300px" src="~/img/tipo2.jpg" /></div>
+    </div>
+    <br />
+    <div class="col-6 text-center">
+        <h1>Tipos de viviendas</h1>
+        <h5>
+            Aquí podrás agregar o eliminar un nuevo tipo de vivienda, en caso de requerirlo.
+            <a class="btn btn-dark btn-sm" asp-page="Create">Añadir</a>
+        </h5>
+
+        <table class="table table-hover table-striped table-bordered">
+            <thead style="background-color: #38383F; color:white;">
+                <tr>
+                    <th>
+                        Tipo de vivienda:
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.TipoVivienda)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            <a class="btn btn-outline-dark" asp-page="./Delete" asp-route-id="@item.TipoViviendaId">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

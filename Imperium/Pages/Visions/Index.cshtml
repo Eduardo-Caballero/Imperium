@@ -1,0 +1,33 @@
+﻿@page
+@model Imperium.Pages.Visions.IndexModel
+
+@{
+    ViewData["Title"] = "Visión | Administrar";
+}
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+    <div class="col-md-7">
+        @foreach (var item in Model.Vision)
+        {
+            <div>
+                <div class="h-100 p-5 border rounded-3">
+                    <h2 class="featurette-heading">Nuestra Visión</h2>
+                    <p class="lead ">@Html.DisplayFor(modelItem => item.Descripcion)</p>
+                </div>
+                <br />
+                <div class="text-center">
+                    <a class="btn btn-dark" style="width:300px" asp-page="./Edit" asp-route-id="@item.VisionId">Editar</a>
+                </div>
+            </div>
+        }
+    </div>
+    <br />
+    <div class="col-md-5 rounded-3 text-center">
+        <img class="cborder bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="~/img/vision.jpg">
+    </div>
+</div>
+
+<hr class="featurette-divider">
+

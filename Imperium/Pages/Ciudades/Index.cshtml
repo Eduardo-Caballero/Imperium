@@ -1,0 +1,45 @@
+﻿@page
+@model Imperium.Pages.Ciudades.IndexModel
+
+@{
+    ViewData["Title"] = "Vivienda | Ciudad";
+}
+
+<div class="row">
+    <div class="bg-dark text-center col-6">
+        <div class="row"><img style="height:300px" src="~/img/ciu1.jpg" /></div>
+        <div class="row"><img style="height:300px" src="~/img/ciu2.jpg" /></div>
+    </div>
+    <br />
+    <div class="col-6 text-center">
+        <h1>Ciudades</h1>
+        <h5>
+            Aquí podrás agregar o eliminar una ciudad, en caso de requerirlo.
+            <a class="btn btn-dark btn-sm" asp-page="Create">Añadir</a>
+        </h5>
+
+        <table class="table table-hover table-striped table-bordered">
+            <thead style="background-color: #38383F; color:white;">
+                <tr>
+                    <th>
+                        Ciudad:
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Ciudad)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            <a class="btn btn-outline-dark" asp-page="./Delete" asp-route-id="@item.CiudadId">Eliminar</a>
+                        </td>
+                    </tr>
+                 }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+﻿@page
+@model Imperium.Pages.Usuarios.CrearLoginModel
+
+@{
+    ViewData["Title"] = "Registro";
+}
+
+<body style="background: #38383F;">
+</body>
+<section>
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+                <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                        <div class="col-md-6 col-lg-5 d-none d-md-block">
+                            <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/img1.jpg"
+                                 alt="login form"
+                                 class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                        </div>
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5 text-black">
+
+
+
+                                <form method="post">
+
+
+
+                                    <div class="d-flex align-items-center mb-3 pb-1 ">
+                                        <img width="40" height="40" src="~/img/logo.png" />
+                                        <span class="h1 fw-bold mb-0">XTREME</span>
+                                    </div>
+
+
+
+                                    <h5 class="fw-normal mb-2 pb-3" style="letter-spacing: 1px;">Inicia sesión en tu cuenta</h5>
+
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                                    <div class="form-group mb-2">
+                                        <label asp-for="Usuario.Nombre" class="control-label">Nombre:</label>
+                                        <input asp-for="Usuario.Nombre" class="form-control" />
+                                        <span asp-validation-for="Usuario.Nombre" class="text-danger"></span>
+                                    </div>
+
+
+
+                                    <div class="form-group mb-2">
+                                        <label asp-for="Usuario.Correo" class="control-label">Email:</label>
+                                        <input asp-for="Usuario.Correo" class="form-control" />
+                                        <span asp-validation-for="Usuario.Correo" class="text-danger"></span>
+                                    </div>
+
+
+
+                                    <div class="form-group mb-2">
+                                        <label asp-for="Usuario.Password" class="control-label">Password:</label>
+                                        <input type="password" asp-for="Usuario.Password" class="form-control" />
+                                        <span asp-validation-for="Usuario.Password" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group mb-2">
+                                        <label asp-for="Usuario.CiudadId" class="control-label">Ciudad:</label>
+                                        <select asp-for="Usuario.CiudadId" class="form-control" asp-items="ViewBag.CiudadId"></select>
+                                    </div>
+
+                                    <div class="pt-1 mb-2">
+                                        <input type="submit" value="Registrar" class="w-100 btn btn-dark btn-lg btn-block" />
+                                    </div>
+
+
+                                    <p class="mb-5 pb-lg-2" style="color: #393f81;">
+                                        <a style="color: #393f81;" asp-page="/Login">Regresar</a>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

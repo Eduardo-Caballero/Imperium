@@ -1,0 +1,37 @@
+﻿@page
+@model Imperium.Pages.Visions.EditModel
+
+@{
+    ViewData["Title"] = "Visión | Administrar";
+}
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+    <div class="col-md-7">
+        <div class="h-100 p-5 border rounded-3">
+            <h2 class="featurette-heading">Nuestra Visión</h2>
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Vision.VisionId" />
+                <div class="form-group">
+                    <textarea asp-for="Vision.Descripcion" class="form-control" cols="40" rows="5" placeholder="Escribe la visión..."></textarea>
+                    <span asp-validation-for="Vision.Descripcion" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group text-center">
+                    <input type="submit" value="Guardar" class="btn btn-dark btn-sm" /> | <a class="btn btn-outline-dark btn-sm" asp-page="./Index">Regresar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-5 rounded-3 text-center">
+        <img class="cborder bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="~/img/vision.jpg">
+    </div>
+</div>
+
+<hr class="featurette-divider">
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

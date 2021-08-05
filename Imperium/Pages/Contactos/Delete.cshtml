@@ -1,0 +1,100 @@
+﻿@page
+@model Imperium.Pages.Contactos.DeleteModel
+
+@{
+    ViewData["Title"] = "Mensaje";
+}
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+            <h2 class="display-5">CONTÁCTANOS</h2>
+            <p class="lead">Contáctanos | Inmobiliaria XTREME</p>
+            <div>
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false" src="~/img/vision.jpg">
+                <h5>Adrián Canto</h5>
+            </div>
+            <div>
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false" src="~/img/mision.jpg">
+                <h5>Eduardo Caballero</h5>
+            </div>
+            <div>
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false" src="~/img/mision.jpg">
+                <h5>Anaeli Duran</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7 bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5">
+        <h1>Mensaje</h1>
+        <hr />
+        <br />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Nombre:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Contacto.Nombre)
+            </dd>
+            <dt class="col-sm-2">
+                Correo:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Contacto.Correo)
+            </dd>
+            <dt class="col-sm-2">
+                Número:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Contacto.Numero)
+            </dd>
+            <dt class="col-sm-2">
+                Mensaje:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Contacto.Mensaje)
+            </dd>
+        </dl>
+        <form method="post" class="text-center">
+            <input type="hidden" asp-for="Contacto.ContactoId" />
+            <input type="submit" value="Eliminar" class="btn btn-dark" /> |
+            <a class="btn btn-outline-dark" asp-page="./Index">Regresar</a>
+        </form>
+    </div>
+</div>
+
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Contacto</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacto.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacto.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacto.Correo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacto.Correo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacto.Numero)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacto.Numero)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacto.Mensaje)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacto.Mensaje)
+        </dd>
+    </dl>
+    
+    
+</div>

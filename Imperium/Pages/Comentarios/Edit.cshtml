@@ -1,0 +1,51 @@
+﻿@page
+@model Imperium.Pages.Comentarios.EditModel
+
+@{
+    ViewData["Title"] = "Viviendas | Comentarios";
+}
+
+<h1>Edit</h1>
+
+<h4>Comentario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Comentario.ComentarioId" />
+            <div class="form-group">
+                <label asp-for="Comentario.Descripcion" class="control-label">Comentario: </label>
+                <input readonly="readonly" asp-for="Comentario.Descripcion" class="form-control" />
+                <span asp-validation-for="Comentario.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comentario.Status" class="control-label"></label>
+                <select asp-for="Comentario.Status" class="form-control custom-select">
+                    <option value="Aprobado">Aprobado</option>
+                    <option value="Rechazado">Rechazado</option>
+                </select>
+                
+            </div>
+            <div class="form-group">
+                <label hidden="hidden" asp-for="Comentario.ViviendaId" class="control-label"></label>
+                <select hidden="hidden" asp-for="Comentario.ViviendaId" class="form-control" asp-items="ViewBag.ViviendaId"></select>
+                <span asp-validation-for="Comentario.ViviendaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label hidden="hidden" asp-for="Comentario.UsuarioId" class="control-label"></label>
+                <select hidden="hidden" asp-for="Comentario.UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
+                <span asp-validation-for="Comentario.UsuarioId" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-dark" /> | 
+                <a asp-page="./Index" class="btn btn-outline-dark">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

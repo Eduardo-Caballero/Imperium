@@ -1,0 +1,47 @@
+﻿@page
+@model Imperium.Pages.Usuarios.DetailsModel
+
+@{
+    ViewData["Title"] = "Usuario | Administrar";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2 card-header">Correo:</dt>
+        <dd class="col-sm-10 card-header">@Html.DisplayFor(model => model.Usuario.Correo)</dd>
+
+        <dt class="col-sm-2">Usuario:</dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Usuario.APaterno) 
+            @Html.DisplayFor(model => model.Usuario.AMaterno) 
+            @Html.DisplayFor(model => model.Usuario.AMaterno)
+        </dd>
+
+        <dt class="col-sm-2">Número celular:</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Usuario.Telefono)</dd>
+
+        <dt class="col-sm-2">Ciudad:</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Usuario.Ciudad.Nombre)</dd>
+
+        <dt class="col-sm-2">Contraseña:</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Usuario.Password)</dd>
+
+        <dt class="col-sm-2">Perfil:</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Usuario.Perfil.Nombre)</dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Usuario.Fotografia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Usuario.Fotografia)
+        </dd>
+    </dl>
+</div>
+<div class="text-center">
+    <a class="btn btn-dark" asp-page="./Edit" asp-route-id="@Model.Usuario.Correo">Editar</a> |
+    <a class="btn btn-outline-dark" asp-page="./Index">Regresar</a>
+</div>
